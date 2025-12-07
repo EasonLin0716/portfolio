@@ -1,11 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+
+// Get the base path from Astro's configuration
+const base = import.meta.env.BASE_URL || '/'
+
 const works = [
   {
     title: '518熊班找工作',
     description:
       '518 熊班找工作頁，採 RWD 並於搜尋時使用 AJAX 從前端直接渲染結果，PC 版效能分數為 90 分以上。',
-    image: '/images/works/work_4.webp',
+    image: `${base}images/works/work_4.webp`,
     techs: ['Vue.js', 'Sass', 'Mustache'],
     link: 'https://518.com.tw/job-index.html',
     github: null
@@ -13,7 +17,7 @@ const works = [
   {
     title: '世界地球日倡議：選擇單一材料商品實踐環境永續｜RHINOSHIELD 犀牛盾',
     description: '犀牛盾 2024 年 4 月淨灘活動頁',
-    image: '/images/works/work_13.webp',
+    image: `${base}images/works/work_13.webp`,
     techs: ['Vite', 'TailwindCSS', 'Splide.js'],
     link: 'https://shop.rhinoshield.tw/event/2024-earth-month/action.html',
     github: null
@@ -22,7 +26,7 @@ const works = [
     title: '翻牌遊戲',
     description:
       '使用 Vue 3 + TypeScript + Scss 製作的翻牌遊戲，支援不同裝置。',
-    image: '/images/works/work_14.webp',
+    image: `${base}images/works/work_14.webp`,
     techs: ['Vue.js', 'TypeScript', 'Vitest'],
     link: 'https://easonlin0716.github.io/flip-card/',
     github: 'https://github.com/EasonLin0716/flip-card'
@@ -31,7 +35,7 @@ const works = [
     title: '四子棋',
     description:
       '使用 React, CSS Module, TypeScript 打造的四子棋遊戲，支援不同裝置。',
-    image: '/images/works/work_16.webp',
+    image: `${base}images/works/work_16.webp`,
     techs: ['React', 'CSS Modules', 'TypeScript'],
     link: 'https://easonlin0716.github.io/frontend-mentor-works/connect-four-game/dist/',
     github:
@@ -41,7 +45,7 @@ const works = [
     title: '職場急轉彎 測驗免費按摩一整年 | 518熊班',
     description:
       '518 熊班與腦筋急轉彎 2 聯名的測驗活動頁，目前已累積超過 15000 人參加。',
-    image: '/images/works/work_15.webp',
+    image: `${base}images/works/work_15.webp`,
     techs: ['PHP', 'Sass', 'Vanilla JS'],
     link: 'https://www.518.com.tw/event-disney.html',
     github: null
@@ -50,7 +54,7 @@ const works = [
     title: 'JS Modal',
     description:
       '使用 TypeScript 打造的 Modal 工具，功能類似於已停止維護的 jQuery Modal ，但不相依於 jQuery 並支援拖曳功能。',
-    image: '/images/works/work_3.webp',
+    image: `${base}images/works/work_3.webp`,
     techs: ['TypeScript', 'NPM'],
     link: 'https://easonlin0716.github.io/JS-Modal/demo/index.html',
     github: 'https://github.com/EasonLin0716/JS-Modal'
@@ -58,7 +62,7 @@ const works = [
   {
     title: 'Dictionary Web App',
     description: '使用 Svelte 和 TypeScript 製作的英文單字查詢應用。',
-    image: '/images/works/work_17.webp',
+    image: `${base}images/works/work_17.webp`,
     techs: ['Svelte', 'TypeScript'],
     link: 'https://easonlin0716.github.io/frontend-mentor-works/dictionary-web-app/dist/',
     github:
@@ -67,7 +71,7 @@ const works = [
   {
     title: 'Moneybar',
     description: '以普惠財商知識為核心的財經平台，並提供財經訂閱方案。',
-    image: '/images/works/work_1.webp',
+    image: `${base}images/works/work_1.webp`,
     techs: ['Bootstrap', 'Nuxt.js'],
     link: 'https://www.moneybar.com.tw',
     github: null
@@ -76,7 +80,7 @@ const works = [
     title: '財哥體...轉換器...',
     description:
       '使用...結巴...函...式...庫...為...底...打造...的...斷...詞...工具...',
-    image: '/images/works/work_2.webp',
+    image: `${base}images/works/work_2.webp`,
     techs: ['Express.js', 'Fly.io'],
     link: 'https://beenlungtextgenerator.fly.dev/',
     github: 'https://github.com/EasonLin0716/beenlung-text-generator'
@@ -85,7 +89,7 @@ const works = [
     title: 'Simple Blog',
     description:
       '使用 Vue.js 作為工具，參考 Medium 所撰寫的部落格前後端分離專案。',
-    image: '/images/works/work_6.webp',
+    image: `${base}images/works/work_6.webp`,
     techs: ['Express.js', 'MySQL(Sequlize)', 'Vue.js'],
     link: 'https://easonlin0716.github.io/simple-blog-frontend/#/posts',
     github: 'https://github.com/EasonLin0716/simple-blog-backend'
@@ -94,7 +98,7 @@ const works = [
     title: 'WAPD',
     description:
       '以韓系女裝及正韓西服為主服飾品牌的內容網站，提供關於該品牌及產品的資訊。',
-    image: '/images/works/work_5.webp',
+    image: `${base}images/works/work_5.webp`,
     techs: ['Express.js', 'MySQL(Sequlize)', 'Mocha'],
     link: 'https://wap-d.com/#/index',
     github: 'https://github.com/EasonLin0716/wapd-backend'
@@ -102,7 +106,7 @@ const works = [
   {
     title: 'Rock Paper Scissors',
     description: '使用 Vue.js, Vite, WindiCSS 打造的猜拳遊戲。',
-    image: '/images/works/work_12.webp',
+    image: `${base}images/works/work_12.webp`,
     techs: ['Vue.js', 'Vite', 'WindiCSS'],
     link: 'https://easonlin0716.github.io/frontend-mentor-works/rock-paper-scissors/dist/index.html',
     github:
@@ -111,7 +115,7 @@ const works = [
   {
     title: '巴哈姆特首頁切版',
     description: '使用 React.js, TailwindCSS 打造的巴哈姆特首頁切版。',
-    image: '/images/works/work_7.webp',
+    image: `${base}images/works/work_7.webp`,
     techs: ['React.js', 'TailwindCSS'],
     link: 'https://easonlin0716.github.io/bahamut-clone-practice/',
     github: null
@@ -119,7 +123,7 @@ const works = [
   {
     title: 'IP Address Tracker',
     description: '使用 Vanilla JS 打造的 IP 位置追蹤器。',
-    image: '/images/works/work_9.webp',
+    image: `${base}images/works/work_9.webp`,
     techs: ['Vanilla JS'],
     link: 'https://easonlin0716.github.io/frontend-mentor-works/ip-address-tracker/index.html',
     github:
@@ -128,7 +132,7 @@ const works = [
   {
     title: 'Where in the world?',
     description: '使用 Vue.js, Vite, TailwindCSS 打造的國家資訊查詢網站。',
-    image: '/images/works/work_11.webp',
+    image: `${base}images/works/work_11.webp`,
     techs: ['Vue.js', 'Vite', 'TailwindCSS'],
     link: 'https://easonlin0716.github.io/frontend-mentor-works/rest-countries-api-with-color-theme-switcher/dist/index.html#/',
     github:
@@ -137,7 +141,7 @@ const works = [
   {
     title: 'Calculator App',
     description: '使用 Vanilla JS 打造的計算機。',
-    image: '/images/works/work_10.webp',
+    image: `${base}images/works/work_10.webp`,
     techs: ['Vanilla JS'],
     link: 'https://easonlin0716.github.io/frontend-mentor-works/calculator-app-main/index.html',
     github:
