@@ -148,10 +148,7 @@ const works = [
 
 <BaseLayout title="Works">
   <main>
-    <header>
-      <h1>My Works</h1>
-      <p>Here are some of my recent projects and works.</p>
-    </header>
+    <h1>My Works</h1>
     <section class="grid-css">
       {
         works.map((work) => (
@@ -206,7 +203,7 @@ const works = [
 <style>
   .grid-css {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem 2rem;
   }
 
@@ -241,13 +238,22 @@ const works = [
     margin: 0;
     font-size: 1.25rem;
     font-weight: 600;
-    line-height: 1.3;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 
   .work__text {
     margin: 0;
     line-height: 1.6;
     flex-grow: 1;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   .work__tags {
@@ -282,7 +288,7 @@ const works = [
     text-decoration: none;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 684px) {
     .grid-css {
       grid-template-columns: 1fr;
     }
