@@ -1,29 +1,112 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import PostCard from '../components/PostCard.astro';
-import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro'
+import PostCard from '../components/PostCard.astro'
+import { getCollection } from 'astro:content'
 
 const posts = (await getCollection('posts'))
-  .filter(post => !post.data.draft)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 ---
 
 <BaseLayout title="Terminal">
   <div class="index-content framed">
-    <h1 id="hello-there">Hello there!</h1>
-    <p>Welcome to the Astro Terminal theme! This is a port of the popular Hugo Terminal theme by panr, bringing the same retro terminal aesthetic to Astro.</p>
-    <p>
-      You can customise the colour scheme using panr's <a href="https://panr.github.io/terminal-css/"><strong>Terminal.css</strong></a> 
-      generator - all generated schemes are fully compatible with this theme.
-    </p>
-    <p>
-      <a href="https://panr.github.io/terminal-css/">
-        <img src="https://panr.github.io/hugo-theme-terminal-demo/img/terminal-css.png" alt="Terminal.css Preview" />
+    <p>Hello! I'm Eason Lin, a senior front-end developer.</p>
+    <div class="icon-links">
+      <a
+        class="icon-links__item"
+        href="https://stackoverflow.com/users/12843373/eason-lin"
+        aria-label="Stack Overflow"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-stack-overflow" aria-hidden="true"></i>
       </a>
+      <a
+        class="icon-links__item"
+        href="https://medium.com/@uu9924079"
+        aria-label="Medium"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-medium" aria-hidden="true"></i>
+      </a>
+      <a
+        class="icon-links__item"
+        href="https://github.com/EasonLin0716"
+        aria-label="Github"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-github" aria-hidden="true"></i>
+      </a>
+      <a
+        class="icon-links__item"
+        href="https://www.linkedin.com/in/%E5%A5%95%E4%BC%B8-%E6%9E%97-75298a130/"
+        aria-label="Linkedin"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <div class="page">
+    <h1>About Me</h1>
+    <p>
+      I'm currently a senior front-end developer at <a
+        href="https://www.facebook.com/universetech.taipei/"
+        target="_blank"
+        rel="noopener">UniverseTech</a
+      >, with over 5 years of experience in web development. My expertise lies
+      in crafting responsive and user-friendly web applications using modern
+      technologies such as <code>React</code>, <code>Vue</code>, and <code
+        >RxJS</code
+      >.
+    </p>
+    <p>
+      Throughout my career, I'm also an active open-source contributor, having
+      submitted PRs to projects like <a
+        href="https://github.com/primefaces/primevue"
+        target="_blank"
+        rel="noopener">PrimeVue</a
+      >, <a
+        href="https://github.com/jakoblind/webpack-autoconf"
+        target="_blank"
+        rel="noopener">webpack-autoconf</a
+      >, and <a
+        href="https://github.com/pjchender/cn2tw4programmer"
+        target="_blank"
+        rel="noopener">cn2tw4programmer</a
+      >, as well as contributing documentation for <a
+        href="https://github.com/felangel/bloc"
+        target="_blank"
+        rel="noopener">Bloc</a
+      >,
+      <a
+        href="https://github.com/expressjs/express"
+        target="_blank"
+        rel="noopener">Express.js</a
+      >, and <a
+        href="https://github.com/unocss/unocss"
+        target="_blank"
+        rel="noopener">UnoCSS</a
+      >.
+    </p>
+    <p>
+      <p>
+        Outside of work, I'm an avid reader currently exploring Analytical
+        psychology and nutrition science, alongside Brandon Sanderson's fantasy
+        novels and other literary works. I enjoy K-pop and Taiwanese indie
+        music, and I'm passionate about writing—my <a
+          href="https://uu9924079.medium.com/"
+          target="_blank"
+          rel="noopener">Medium</a
+        > has grown to over 100 articles. I also love staying active, playing board
+        games, and escape games.
+      </p>
     </p>
   </div>
-  
-  <div class="posts">
+  <!-- <div class="posts">
     {posts.map((post) => <PostCard post={post} />)}
-  </div>
+  </div> -->
 </BaseLayout>

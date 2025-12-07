@@ -1,0 +1,8 @@
+.icon-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.icon-links__item {
+  font-size: 2rem;
+}
