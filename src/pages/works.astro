@@ -1,0 +1,294 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+const works = [
+  {
+    title: '518熊班找工作',
+    description:
+      '518 熊班找工作頁，採 RWD 並於搜尋時使用 AJAX 從前端直接渲染結果，PC 版效能分數為 90 分以上。',
+    image: '/images/works/work_4.webp',
+    techs: ['Vue.js', 'Sass', 'Mustache'],
+    link: 'https://518.com.tw/job-index.html',
+    github: null
+  },
+  {
+    title: '世界地球日倡議：選擇單一材料商品實踐環境永續｜RHINOSHIELD 犀牛盾',
+    description: '犀牛盾 2024 年 4 月淨灘活動頁',
+    image: '/images/works/work_13.webp',
+    techs: ['Vite', 'TailwindCSS', 'Splide.js'],
+    link: 'https://shop.rhinoshield.tw/event/2024-earth-month/action.html',
+    github: null
+  },
+  {
+    title: '翻牌遊戲',
+    description:
+      '使用 Vue 3 + TypeScript + Scss 製作的翻牌遊戲，支援不同裝置。',
+    image: '/images/works/work_14.webp',
+    techs: ['Vue.js', 'TypeScript', 'Vitest'],
+    link: 'https://easonlin0716.github.io/flip-card/',
+    github: 'https://github.com/EasonLin0716/flip-card'
+  },
+  {
+    title: '四子棋',
+    description:
+      '使用 React, CSS Module, TypeScript 打造的四子棋遊戲，支援不同裝置。',
+    image: '/images/works/work_16.webp',
+    techs: ['React', 'CSS Modules', 'TypeScript'],
+    link: 'https://easonlin0716.github.io/frontend-mentor-works/connect-four-game/dist/',
+    github:
+      'https://github.com/EasonLin0716/frontend-mentor-works/tree/main/connect-four-game'
+  },
+  {
+    title: '職場急轉彎 測驗免費按摩一整年 | 518熊班',
+    description:
+      '518 熊班與腦筋急轉彎 2 聯名的測驗活動頁，目前已累積超過 15000 人參加。',
+    image: '/images/works/work_15.webp',
+    techs: ['PHP', 'Sass', 'Vanilla JS'],
+    link: 'https://www.518.com.tw/event-disney.html',
+    github: null
+  },
+  {
+    title: 'JS Modal',
+    description:
+      '使用 TypeScript 打造的 Modal 工具，功能類似於已停止維護的 jQuery Modal ，但不相依於 jQuery 並支援拖曳功能。',
+    image: '/images/works/work_3.webp',
+    techs: ['TypeScript', 'NPM'],
+    link: 'https://easonlin0716.github.io/JS-Modal/demo/index.html',
+    github: 'https://github.com/EasonLin0716/JS-Modal'
+  },
+  {
+    title: 'Dictionary Web App',
+    description: '使用 Svelte 和 TypeScript 製作的英文單字查詢應用。',
+    image: '/images/works/work_17.webp',
+    techs: ['Svelte', 'TypeScript'],
+    link: 'https://easonlin0716.github.io/frontend-mentor-works/dictionary-web-app/dist/',
+    github:
+      'https://github.com/EasonLin0716/frontend-mentor-works/tree/main/dictionary-web-app'
+  },
+  {
+    title: 'Moneybar',
+    description: '以普惠財商知識為核心的財經平台，並提供財經訂閱方案。',
+    image: '/images/works/work_1.webp',
+    techs: ['Bootstrap', 'Nuxt.js'],
+    link: 'https://www.moneybar.com.tw',
+    github: null
+  },
+  {
+    title: '財哥體...轉換器...',
+    description:
+      '使用...結巴...函...式...庫...為...底...打造...的...斷...詞...工具...',
+    image: '/images/works/work_2.webp',
+    techs: ['Express.js', 'Fly.io'],
+    link: 'https://beenlungtextgenerator.fly.dev/',
+    github: 'https://github.com/EasonLin0716/beenlung-text-generator'
+  },
+  {
+    title: 'Simple Blog',
+    description:
+      '使用 Vue.js 作為工具，參考 Medium 所撰寫的部落格前後端分離專案。',
+    image: '/images/works/work_6.webp',
+    techs: ['Express.js', 'MySQL(Sequlize)', 'Vue.js'],
+    link: 'https://easonlin0716.github.io/simple-blog-frontend/#/posts',
+    github: 'https://github.com/EasonLin0716/simple-blog-backend'
+  },
+  {
+    title: 'WAPD',
+    description:
+      '以韓系女裝及正韓西服為主服飾品牌的內容網站，提供關於該品牌及產品的資訊。',
+    image: '/images/works/work_5.webp',
+    techs: ['Express.js', 'MySQL(Sequlize)', 'Mocha'],
+    link: 'https://wap-d.com/#/index',
+    github: 'https://github.com/EasonLin0716/wapd-backend'
+  },
+  {
+    title: 'Rock Paper Scissors',
+    description: '使用 Vue.js, Vite, WindiCSS 打造的猜拳遊戲。',
+    image: '/images/works/work_12.webp',
+    techs: ['Vue.js', 'Vite', 'WindiCSS'],
+    link: 'https://easonlin0716.github.io/frontend-mentor-works/rock-paper-scissors/dist/index.html',
+    github:
+      'https://github.com/EasonLin0716/frontend-mentor-works/tree/main/rock-paper-scissors'
+  },
+  {
+    title: '巴哈姆特首頁切版',
+    description: '使用 React.js, TailwindCSS 打造的巴哈姆特首頁切版。',
+    image: '/images/works/work_7.webp',
+    techs: ['React.js', 'TailwindCSS'],
+    link: 'https://easonlin0716.github.io/bahamut-clone-practice/',
+    github: null
+  },
+  {
+    title: 'IP Address Tracker',
+    description: '使用 Vanilla JS 打造的 IP 位置追蹤器。',
+    image: '/images/works/work_9.webp',
+    techs: ['Vanilla JS'],
+    link: 'https://easonlin0716.github.io/frontend-mentor-works/ip-address-tracker/index.html',
+    github:
+      'https://github.com/EasonLin0716/frontend-mentor-works/tree/main/ip-address-tracker'
+  },
+  {
+    title: 'Where in the world?',
+    description: '使用 Vue.js, Vite, TailwindCSS 打造的國家資訊查詢網站。',
+    image: '/images/works/work_11.webp',
+    techs: ['Vue.js', 'Vite', 'TailwindCSS'],
+    link: 'https://easonlin0716.github.io/frontend-mentor-works/rest-countries-api-with-color-theme-switcher/dist/index.html#/',
+    github:
+      'https://github.com/EasonLin0716/frontend-mentor-works/tree/main/rest-countries-api-with-color-theme-switcher'
+  },
+  {
+    title: 'Calculator App',
+    description: '使用 Vanilla JS 打造的計算機。',
+    image: '/images/works/work_10.webp',
+    techs: ['Vanilla JS'],
+    link: 'https://easonlin0716.github.io/frontend-mentor-works/calculator-app-main/index.html',
+    github:
+      'https://github.com/EasonLin0716/frontend-mentor-works/tree/main/calculator-app-main'
+  }
+]
+---
+
+<BaseLayout title="Works">
+  <main>
+    <header>
+      <h1>My Works</h1>
+      <p>Here are some of my recent projects and works.</p>
+    </header>
+    <section class="grid-css">
+      {
+        works.map((work) => (
+          <article class="card-wrapper">
+            <div class="grid-item">
+              <a
+                class="img-link"
+                href={work.link}
+                aria-label={work.title}
+                target="_blank"
+                rel="noopener"
+              >
+                <img src={work.image} alt="" loading="lazy" />
+              </a>
+            </div>
+            <header>
+              <h2 class="work__title">{work.title}</h2>
+            </header>
+            <p class="work__text">{work.description}</p>
+            <div class="work__tags">
+              {work.techs.map((tech) => (
+                <code>{tech}</code>
+              ))}
+            </div>
+            <footer class="work__links">
+              <a
+                href={work.link}
+                aria-label={work.title}
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-solid fa-link" aria-hidden="true" />
+              </a>
+              {work.github && (
+                <a
+                  href={work.github}
+                  aria-label={work.title}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <i class="fa-brands fa-github" aria-hidden="true" />
+                </a>
+              )}
+            </footer>
+          </article>
+        ))
+      }
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .grid-css {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .card-wrapper {
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .grid-item {
+    padding-top: 100%;
+    position: relative;
+  }
+
+  .img-link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .img-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+  }
+
+  .work__title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .work__text {
+    margin: 0;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+
+  .work__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .work__tags li {
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .work__links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+  }
+
+  .work__links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .grid-css {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
