@@ -1,0 +1,42 @@
+---
+import { getNavigationItems } from '../data/navigation';
+
+export interface Props {
+  base?: string;
+  variant?: 'desktop' | 'mobile';
+}
+
+const { base = '', variant = 'desktop' } = Astro.props;
+const navigationItems = getNavigationItems(base);
+---
+
+{variant === 'mobile' ? (
+  <ul class="menu menu--mobile">
+    <li class="menu__trigger">Menu ▾</li>
+    <li>
+      <ul class="menu__dropdown">
+        {navigationItems.map((item) => (
+          <li>
+            <a href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noopener noreferrer' : undefined}>
+              {item.icon && <i class={item.icon}></i>}
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </li>
+  </ul>
+) : (
+  <nav class="navigation-menu">
+    <ul class="navigation-menu__inner menu--desktop">
+      {navigationItems.map((item) => (
+        <li>
+          <a href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noopener noreferrer' : undefined}>
+            {item.icon && <i class={item.icon}></i>}
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
