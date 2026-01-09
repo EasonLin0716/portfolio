@@ -7,8 +7,6 @@ image: ''
 tags: ['Weekly IO']
 ---
 
-## 2026-01-09 Weekly I/O
-
 This is the first week of my 12-week-year plan. I set 8 tasks, which are:
 
 1. Read an English article (4 times) -- 3/4
